@@ -1,0 +1,97 @@
+            body{
+                height: 100vh;
+                background: linear-gradient(to bottom right, #0033cc 0%, #ff99cc 100%);
+                font-family: 'Calibri';
+                display: grid;
+                grid-template-columns: 100%;
+                justify-items: center;
+                align-items:center;
+            }
+            #login{
+                min-width:22%;
+                position:relative;
+                padding:2em;
+                background-color: whitesmoke;
+                border-radius: 10px;
+            }
+            input,a,p,#signup{
+                font-size: 1.1rem;
+            }
+            h1{
+                text-align: center;
+                margin:0px 0px 20px 0px;
+            }
+            input{
+                width:100%;
+                margin:20px 0px;
+                height:30px;
+                outline: none;
+                border:none;
+                border-bottom:2px solid lightgrey;
+                text-transform: capitalize;
+                padding:0px 0px 5px 10px;
+            }
+            input:focus,input:visited{
+                color:black
+            }
+            a{
+                text-decoration: none;
+                color: rgb(34, 144, 217);
+            }
+            #forgotpasswd{
+                padding:0px 0px 0px 10px;
+            }
+            #signup{
+                text-align: center;
+                margin-top:10px;
+            }
+            #signupbutton{
+                margin: 0;
+                width:100%;
+                height:40px;
+                border-radius:50px;
+                background-color: rgb(34, 144, 217);
+                color: whitesmoke;
+                font-size:medium;
+                border:none;
+            }
+            #loginbutton{
+                display: none;
+                margin:20px 0px 10px 0px;
+                width:100%;
+                height:40px;
+                border-radius:50px;
+                background-color: rgb(34, 144, 217);
+                color: whitesmoke;
+                font-size:medium;
+                border:none;
+            }
+            #forgotbutton{
+                display: none;
+                margin:20px 0px 10px 0px;
+                width:100%;
+                height:40px;
+                border-radius:50px;
+                background-color: rgb(34, 144, 217);
+                color: whitesmoke;
+                font-size:medium;
+                border:none;
+            }
+            ul>#username{
+                list-style-image:url('img/email.png');
+               
+            }
+            ul>#passwd,#passwd2{
+                list-style-image:url('img/passwd.png');
+                
+            }
+            ul>#name{
+                list-style-image:url('img/user.png');
+                
+            }
+            #nameerror,#emailerror,#passwderror,#passwd2derror{
+                    color:red;
+                    display: none;
+                    font-size: smaller;
+                    margin: 0px;
+            }
