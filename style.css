@@ -71,3 +71,13 @@
                     font-size: smaller;
                     margin: 0px;
             }
+            @media only screen and (max-width: 500px) {
+                #main{
+                    width:60%;
+                    min-width: 40%;
+                    position:relative;
+                    padding:2em;
+                    background-color: whitesmoke;
+                    border-radius: 10px;
+                }
+            }
