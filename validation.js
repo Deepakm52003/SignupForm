@@ -48,7 +48,7 @@ document.getElementById('signupbutton').addEventListener('click',function (){
             passwd2Error.style.display = 'block'
         }
         else{
-            document.querySelector('h1').textContent = 'SignUp Successfull :)'
+            document.querySelector('h1').textContent = 'SignUp Successfull'
             document.querySelector('button').style.display = 'none'
             document.getElementById('name').style.display = 'none'
             document.getElementById('username').style.display= 'none'
