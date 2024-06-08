@@ -18,14 +18,28 @@
 </div>
     
     <script>
-        function onSignIn(googleUser) {
-            debugger;
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
+// Assuming you've already initialized gapi.auth2
+const authInstance = gapi.auth2.getAuthInstance();
+
+// Get the user's basic profile
+const user = authInstance.currentUser.get();
+const basicProfile = user.getBasicProfile();
+
+// Example usage:
+const userId = basicProfile.getId();
+const fullName = basicProfile.getName();
+const givenName = basicProfile.getGivenName();
+const familyName = basicProfile.getFamilyName();
+const imageUrl = basicProfile.getImageUrl();
+const email = basicProfile.getEmail();
+
+console.log(`User ID: ${userId}`);
+console.log(`Full Name: ${fullName}`);
+console.log(`Given Name: ${givenName}`);
+console.log(`Family Name: ${familyName}`);
+console.log(`Profile Image URL: ${imageUrl}`);
+console.log(`Email Address: ${email}`);
+
     </script>
     <div id="main">
         <h1>SignUp</h1>
