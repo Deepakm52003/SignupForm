@@ -8,14 +8,9 @@
     <link rel="stylesheet" href="style.css">
    
 
-      <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
-<script>
-  window.onLoadCallback = function() {
-    gapi.auth2.init({
-      client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com'
-    });
-  };
-</script>
+      <script src="https://apis.google.com/js/platform.js"></script>
+
+
 
 </head>
 <body>
@@ -28,11 +23,7 @@
 </div>
     
     <script>
-        window.onLoadCallback = function(){
-  gapi.auth2.init({
-      client_id: '704476680525-cllqinf089aqjpsu3mo8234akbldqj69.apps.googleusercontent.com'
-    });
-}
+      
 var auth2 = gapi.auth2.getAuthInstance();
 var profile = auth2.currentUser.get().getBasicProfile();
 console.log('Name: ' + profile.getName());
