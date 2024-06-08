@@ -6,6 +6,8 @@
     
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+
       <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
@@ -18,6 +20,25 @@
 </div>
     
     <script>
+        function init() {
+    gapi.load('auth2', function() {
+        // Ready. Make a call to gapi.auth2.init or some other API
+    });
+}
+
+        const params = {
+    client_id: '704476680525-cllqinf089aqjpsu3mo8234akbldqj69.apps.googleusercontent.com'
+    // Add any additional configuration options here
+};
+
+gapi.auth2.init(params).then(function(authInstance) {
+    // GoogleAuth object is fully initialized
+    // You can use authInstance to interact with Google Sign-In
+}).catch(function(error) {
+    // Handle initialization error
+});
+
+
 // Assuming you've already initialized gapi.auth2
 const authInstance = gapi.auth2.getAuthInstance();
 
