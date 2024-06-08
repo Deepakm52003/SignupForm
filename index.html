@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="style.css">
    
 
-      <script src="https://accounts.google.com/gsi/client" async defer></script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>
+<script>
+  window.onLoadCallback = function() {
+    gapi.auth2.init({
+      client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com'
+    });
+  };
+</script>
+
 </head>
 <body>
   
