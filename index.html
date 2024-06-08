@@ -20,46 +20,10 @@
 </div>
     
     <script>
-        function init() {
-    gapi.load('auth2', function() {
-        // Ready. Make a call to gapi.auth2.init or some other API
-    });
-}
-
-        const params = {
-    client_id: '704476680525-cllqinf089aqjpsu3mo8234akbldqj69.apps.googleusercontent.com'
-    // Add any additional configuration options here
-};
-
-gapi.auth2.init(params).then(function(authInstance) {
-    // GoogleAuth object is fully initialized
-    // You can use authInstance to interact with Google Sign-In
-}).catch(function(error) {
-    // Handle initialization error
-});
-
-
-// Assuming you've already initialized gapi.auth2
-const authInstance = gapi.auth2.getAuthInstance();
-
-// Get the user's basic profile
-const user = authInstance.currentUser.get();
-const basicProfile = user.getBasicProfile();
-
-// Example usage:
-const userId = basicProfile.getId();
-const fullName = basicProfile.getName();
-const givenName = basicProfile.getGivenName();
-const familyName = basicProfile.getFamilyName();
-const imageUrl = basicProfile.getImageUrl();
-const email = basicProfile.getEmail();
-
-console.log(`User ID: ${userId}`);
-console.log(`Full Name: ${fullName}`);
-console.log(`Given Name: ${givenName}`);
-console.log(`Family Name: ${familyName}`);
-console.log(`Profile Image URL: ${imageUrl}`);
-console.log(`Email Address: ${email}`);
+var auth2 = gapi.auth2.getAuthInstance();
+var profile = auth2.currentUser.get().getBasicProfile();
+console.log('Name: ' + profile.getName());
+console.log('Email: ' + profile.getEmail());
 
     </script>
     <div id="main">
