@@ -9,7 +9,7 @@
    
 
       
- <script src="https://accounts.google.com/gsi/client"></script>
+
    
 
 
@@ -18,26 +18,14 @@
 <body>
   
 
-    <div id="g_id_onload"
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+<div id="g_id_onload"
      data-client_id="704476680525-cllqinf089aqjpsu3mo8234akbldqj69.apps.googleusercontent.com"
      data-context="signin"
      data-login_uri="https://deepakm52003.github.io/SignupForm"
-     data-itp_support="true"
-        data-callback="handleCredentialResponse">
+     data-itp_support="true">
 
-<script>
-function handleCredentialResponse(response) {
-  // decodeJwtResponse() is a custom function defined by you
-  // to decode the credential response.
-  const responsePayload = decodeJwtResponse(response.credential);
-  console.log("ID: " + responsePayload.sub);
-  console.log('Full Name: ' + responsePayload.name);
-  console.log('Given Name: ' + responsePayload.given_name);
-  console.log('Family Name: ' + responsePayload.family_name);
-  console.log("Image URL: " + responsePayload.picture);
-  console.log("Email: " + responsePayload.email);
-}
-</script>
+
 
 
     
