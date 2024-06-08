@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
    
 
       
 <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+   
 
 
 
 </head>
 <body>
   
-    <div id="g_id_onload"
-     data-client_id="704476680525-cllqinf089aqjpsu3mo8234akbldqj69.apps.googleusercontent.com"
-     data-context="signin"
-     data-login_uri="https://deepakm52003.github.io/SignupForm"
-     data-itp_support="true">
-</div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
     
     <script>
         var auth2;
