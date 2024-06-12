@@ -1,66 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-   
-
-      
-
-   
-
- <script src="https://accounts.google.com/gsi/client" ></script>
-
+    <title>Google OAuth Example</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="704476680525-cllqinf089aqjpsu3mo8234akbldqj69.apps.googleusercontent.com">
 </head>
 <body>
-  
+    <h1>Google OAuth Example</h1>
+    <div id="googleSignInButton" class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div id="userProfile"></div>
 
-   
-<div id="g_id_onload"
-     data-client_id="704476680525-cllqinf089aqjpsu3mo8234akbldqj69.apps.googleusercontent.com"
-     data-context="signin"
-     data-login_uri="https://deepakm52003.github.io/SignupForm"
-     data-itp_support="true"
-    >
-
-
-<script>
-function handleCredentialResponse(response) {
-  // decodeJwtResponse() is a custom function defined by you
-  // to decode the credential response.
-  const responsePayload = decodeJwtResponse(response.credential);
-  console.log("ID: " + responsePayload.sub);
-  console.log('Full Name: ' + responsePayload.name);
-  console.log('Given Name: ' + responsePayload.given_name);
-  console.log('Family Name: ' + responsePayload.family_name);
-  console.log("Image URL: " + responsePayload.picture);
-  console.log("Email: " + responsePayload.email);
-}
-</script>
-
-    
-  
-    <div id="main">
-        <h1>SignUp</h1>
-        <Form action="">
-            <ul>
-                <li id="name"><input type="text" name="names" id="inputname" placeholder="Name" required></li>
-                <p id="nameerror"></p>
-                <li id="username"><input type="email" name="email" id="inputemail" placeholder="Email" required></li>
-                <p id="emailerror"></p>
-                <li id="passwd"><input type="password" name="password" id="inputpasswd" placeholder="Password" required></li>
-                <p id="passwderror"></p>
-                <li id="passwd2"><input type="password" name="password2" id="inputpasswd2" placeholder="Confirm Password" required></li>
-                <p id="passwd2derror"></p>
-            </ul>
-            <button type="button" id="signupbutton">SignUp</button>
-        </Form>
-    </div>
-    <script src="validation.js">
-        
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            document.getElementById('userProfile').innerHTML = 'Name: ' + profile.getName() + '<br>Email: ' + profile.getEmail();
+        }
     </script>
 </body>
 </html>
